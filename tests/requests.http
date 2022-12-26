@@ -1,0 +1,178 @@
+### Registration
+POST http://localhost:9999/api/v1/auth/registration
+Content-Type: application/json
+
+{
+  "name": "Azam",
+  "login": "Azam",
+  "password": "password"
+}
+
+### Login
+POST http://localhost:9999/api/v1/auth/login
+Content-Type: application/json
+
+{
+  "name": "Azam",
+  "login": "Azam",
+  "password": "password"
+}
+
+### GetTypes
+GET http://localhost:9999/api/v1/money_tracker/types
+Accept: application/json
+
+
+### GetCategories
+GET http://localhost:9999/api/v1/money_tracker/categories
+Accept: application/json
+
+### GetAccounts
+GET http://localhost:9999/api/v1/money_tracker/accounts
+Accept: application/json
+
+### IncomeOperation
+POST http://localhost:9999/api/v1/money_tracker/operation
+Content-Type: application/json
+
+{
+  "type_id": 1,
+  "category_id" : 1,
+  "account_id": 1,
+  "amount" : 200.00
+}
+
+### ExpenceOperation
+POST http://localhost:9999/api/v1/money_tracker/operation
+Content-Type: application/json
+
+{
+  "type_id": 2,
+  "category_id" : 8,
+  "account_id": 1,
+  "amount" : 100.00
+}
+
+### TransferOperation
+POST http://localhost:9999/api/v1/money_tracker/operation
+Content-Type: application/json
+
+{
+  "type_id": 3,
+  "account_id": 1,
+  "account_to": 2,
+  "amount" : 100.00
+}
+
+### NewAccount
+POST http://localhost:9999/api/v1/money_tracker/account
+Content-Type: application/json
+
+{
+  "name": "Хумо кошелёк - 1",
+  "balance": 2345.43
+}
+
+### UpdateAccount
+PUT http://localhost:9999/api/v1/money_tracker/account
+Content-Type: application/json
+
+{
+  "account_id": 1,
+  "name": "Хумо кошелёк - 11"
+}
+
+### DeleteAccount
+DELETE http://localhost:9999/api/v1/money_tracker/account
+Content-Type: application/json
+
+{
+  "account_id": 1
+}
+
+### GetTotalBalance
+GET http://localhost:9999/api/v1/money_tracker/total-balance
+Accept: application/json
+
+### ExcelAllTypesAllAccounts
+POST http://localhost:9999/api/v1/money_tracker/excel-reports
+Content-Type: application/json
+
+{
+  "page": 1,
+  "count_in_page": 2,
+  "start_date": "2022-12-12"
+}
+
+### ReportAllTypesAllAccounts
+POST http://localhost:9999/api/v1/money_tracker/reports
+Content-Type: application/json
+
+{
+  "page": 1,
+  "count_in_page": 7,
+  "start_date": "2022-12-12",
+  "end_date": "2022-12-21"
+}
+
+### ExcelAllTypesCustomAccount
+POST http://localhost:9999/api/v1/money_tracker/excel-reports
+Content-Type: application/json
+
+{
+  "account_id" : 1,
+  "page": 1,
+  "count_in_page": 2
+}
+
+### ReportAllTypesCustomAccount
+POST http://localhost:9999/api/v1/money_tracker/reports
+Content-Type: application/json
+
+{
+  "account_id" : 1,
+  "page": 1,
+  "count_in_page": 2
+}
+
+### ExcelCustomTypeCustomAccount
+POST http://localhost:9999/api/v1/money_tracker/excel-reports
+Content-Type: application/json
+
+{
+  "type_id": 1,
+  "account_id": 1,
+  "page": 1,
+  "count_in_page": 2
+}
+
+### ReportCustomTypeCustomAccount
+POST http://localhost:9999/api/v1/money_tracker/reports
+Content-Type: application/json
+
+{
+  "type_id": 1,
+  "account_id": 1,
+  "page": 1,
+  "count_in_page": 2
+}
+
+### ExcelCustomTypeAllAccounts
+POST http://localhost:9999/api/v1/money_tracker/reports
+Content-Type: application/json
+
+{
+  "type_id": 1,
+  "page": 1,
+  "count_in_page": 2
+}
+
+### ReportCustomTypeAllAccounts
+POST http://localhost:9999/api/v1/money_tracker/reports
+Content-Type: application/json
+
+{
+  "type_id": 1,
+  "page": 1,
+  "count_in_page": 2
+}
